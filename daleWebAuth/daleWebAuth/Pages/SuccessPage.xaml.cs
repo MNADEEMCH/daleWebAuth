@@ -10,13 +10,11 @@ using Xamarin.Forms.Xaml;
 namespace daleWebAuth.Pages
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class MainPage : ContentPage
+    public partial class SuccessPage : ContentPage
     {
-        public MainPage()
+        public SuccessPage()
         {
             InitializeComponent();
-
-            NavigationPage.SetHasNavigationBar(this, false);
         }
     }
 }

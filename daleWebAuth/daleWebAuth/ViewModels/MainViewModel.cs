@@ -41,7 +41,13 @@ namespace daleWebAuth.ViewModels
                 if (!string.IsNullOrEmpty(code))
                 {
                     var loginResult = await _accountService.ExchangeCodeForToken(code);
-
+                    if(loginResult.Item1 == helpers.Common.CallStatus.Success)
+                    {
+                    }
+                    else
+                    {
+                        
+                    }
                     //var authResult = await _accountService.AuthServerUserInfo(loginResult.Item2?.AccessToken);
                     //if (authResult.Item1 == CallStatus.Success)
                     //{
