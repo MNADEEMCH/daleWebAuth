@@ -9,7 +9,7 @@
              Title="OTP Verification" Visual="Material">
     <ContentPage.Content>
         <StackLayout Padding="20">
-            <Entry Placeholder="Enter OTP" BackgroundColor="Transparent" Keyboard="Numeric" MaxLength="10"/>
+            <Entry Placeholder="Enter OTP" BackgroundColor="Transparent" Keyboard="Numeric" MaxLength="8"/>
             <Button Text="Verify" Style="{StaticResource ButtonStyle}" Command="{Binding VerifyCommand}" Margin="0,15,0,0"/>
         </StackLayout>
     </ContentPage.Content>
