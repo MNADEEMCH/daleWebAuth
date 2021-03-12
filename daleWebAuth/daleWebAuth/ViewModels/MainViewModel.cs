@@ -1,4 +1,6 @@
-﻿using daleWebAuth.Services;
+﻿using daleWebAuth.Pages.Other;
+using daleWebAuth.Services;
+using daleWebAuth.ViewModels.Base;
 using MvvmHelpers;
 using MvvmHelpers.Commands;
 using System;
@@ -11,7 +13,7 @@ using Xamarin.Forms;
 
 namespace daleWebAuth.ViewModels
 {
-    public class MainViewModel : BaseViewModel
+    public class MainViewModel : ViewModelBase
     {
         private readonly IAccountService _accountService;
 
@@ -26,7 +28,6 @@ namespace daleWebAuth.ViewModels
 
 
         ICommand _authorizeCommand;
-
         public ICommand AuthorizeCommand => _authorizeCommand ??= new AsyncCommand(ExecuteAuthorizeCommand);
 
         public async Task ExecuteAuthorizeCommand()
@@ -61,6 +62,14 @@ namespace daleWebAuth.ViewModels
 
                 //await DialogService.AlertAsync($"Failed: {ex.Message}");
             }
+        }
+
+        ICommand _loginCommand;
+        public ICommand LoginCommand => _loginCommand ??= new AsyncCommand(ExecuteLoginCommand);
+
+        public async Task ExecuteLoginCommand()
+        {
+            await NavigationService.PushAsync(new LoginPage());
         }
     }
 }
