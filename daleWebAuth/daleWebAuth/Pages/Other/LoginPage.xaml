@@ -16,10 +16,10 @@
     </ContentPage.Resources>
     <ContentPage.Content>
         <StackLayout Padding="20">
-            <Entry Placeholder="Identity No." ReturnType="Next"/>
+            <Entry Placeholder="Identity No." ReturnType="Next" Keyboard="Numeric"/>
             <Entry Placeholder="Issurance Date" ReturnType="Next"/>
             <DatePicker BackgroundColor="Transparent"/>
-            <Entry Placeholder="Gender" ReturnType="Done"/>
+            <Entry Placeholder="Gender" ReturnType="Done" Keyboard="Text"/>
 
             <Button Text="Login" Style="{StaticResource ButtonStyle}" Command="{Binding LoginCommand}" Margin="0,15,0,0"/>
         </StackLayout>

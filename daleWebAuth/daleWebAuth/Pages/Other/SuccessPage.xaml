@@ -1,10 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="daleWebAuth.Pages.Other.SuccessPage">
+             x:Class="daleWebAuth.Pages.Other.SuccessPage"
+             Title="Success" Visual="Material">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Login Success!" TextColor="CadetBlue" FontSize="20" FontAttributes="Bold"
+        <StackLayout Padding="20">
+            <Label Text="Login Success!" TextColor="Green" FontSize="20" FontAttributes="Bold"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
         </StackLayout>

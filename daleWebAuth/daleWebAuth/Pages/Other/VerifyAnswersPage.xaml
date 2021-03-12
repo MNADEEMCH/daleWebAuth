@@ -6,12 +6,13 @@
              xmlns:local="clr-namespace:daleWebAuth.ViewModels.Other"
              x:DataType="local:VerifyAnswersViewModel"
              base:ViewModelLocator.AutoWireViewModel="True"
-             Visual="Material">
+             Visual="Material" Title="Security Question Answers">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout Padding="20">
+            <Entry Placeholder="Enter debit card last 4 digits" Keyboard="Numeric" MaxLength="4" ReturnType="Next" BackgroundColor="Transparent"/>
+            <Entry Placeholder="Mother name" ReturnType="Next" Keyboard="Text" BackgroundColor="Transparent"/>
+            <Entry Placeholder="Birth city name" ReturnType="Next" Keyboard="Text" BackgroundColor="Transparent"/>
+            <Button Text="Done" Style="{StaticResource ButtonStyle}" Margin="0,15,0,0" Command="{Binding DoneCommand}"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
