@@ -6,12 +6,12 @@
              xmlns:local="clr-namespace:daleWebAuth.ViewModels.Other"
              x:DataType="local:VerifyAnswersViewModel"
              base:ViewModelLocator.AutoWireViewModel="True"
-             Visual="Material" Title="Security Question Answers">
+             Visual="Material" Title="Security Questions">
     <ContentPage.Content>
         <StackLayout Padding="20">
-            <Entry Placeholder="Enter debit card last 4 digits" Keyboard="Numeric" MaxLength="4" ReturnType="Next" BackgroundColor="Transparent"/>
-            <Entry Placeholder="Mother name" ReturnType="Next" Keyboard="Text" BackgroundColor="Transparent"/>
-            <Entry Placeholder="Birth city name" ReturnType="Next" Keyboard="Text" BackgroundColor="Transparent"/>
+            <Entry Placeholder="What are the last 4 of your debit card?" Keyboard="Numeric" MaxLength="4" ReturnType="Next" BackgroundColor="Transparent"/>
+            <Entry Placeholder="What is your mother name?" ReturnType="Next" Keyboard="Text" BackgroundColor="Transparent"/>
+            <Entry Placeholder="What is your Birth city?" ReturnType="Done" Keyboard="Text" BackgroundColor="Transparent"/>
             <Button Text="Finish" Style="{StaticResource ButtonStyle}" Margin="0,15,0,0" Command="{Binding DoneCommand}"/>
         </StackLayout>
     </ContentPage.Content>

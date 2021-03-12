@@ -41,31 +41,27 @@ namespace daleWebAuth.ViewModels
 
                 if (!string.IsNullOrEmpty(code))
                 {
-                    using (var loading = DialogService.Loading("Authenticating... please wait"))
+                    using var loading = DialogService.Loading("Authenticating... please wait");
+                    var loginResult = await _accountService.ExchangeCodeForToken(code);
+                    if (loginResult.Item1 == helpers.Common.CallStatus.Success)
                     {
-                        var loginResult = await _accountService.ExchangeCodeForToken(code);
-                        if (loginResult.Item1 == helpers.Common.CallStatus.Success)
-                        {
-                            await NavigationService.PushAsync(new SuccessPage());
-                        }
-                        else
-                        {
-                            await DialogService.AlertAsync("Authentication is not successful, something went wrong", "Error", "Ok");
-                        }
+                        await NavigationService.PushAsync(new SuccessPage());
+                    }
+                    else
+                    {
+                        await DialogService.AlertAsync("Authentication is not successful, something went wrong", "Alert", "OK");
                     }
                 }
             }
             catch (OperationCanceledException ex)
             {
-                Console.WriteLine("Login canceled.");
-
-                //await DialogService.AlertAsync("Login canceled.");
+                _ = ex;
+                //await DialogService.AlertAsync("Login has been canceled.", "Alert", "OK");
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Failed: {ex.Message}");
-
-                //await DialogService.AlertAsync($"Failed: {ex.Message}");
+                _ = ex;
+                await DialogService.AlertAsync("Authentication is not successful, something went wrong", "Alert", "OK");
             }
         }
 

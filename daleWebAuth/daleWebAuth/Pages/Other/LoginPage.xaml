@@ -16,12 +16,20 @@
     </ContentPage.Resources>
     <ContentPage.Content>
         <StackLayout Padding="20">
-            <Entry Placeholder="Card Number" ReturnType="Next" Keyboard="Numeric"/>
-            <Entry Placeholder="Issurance Date" ReturnType="Next"/>
-            <DatePicker BackgroundColor="Transparent"/>
-            <Entry Placeholder="Gender" ReturnType="Done" Keyboard="Text"/>
 
-            <Button Text="Next" Style="{StaticResource ButtonStyle}" Command="{Binding LoginCommand}" Margin="0,15,0,0"/>
+            <DatePicker x:Name="IssueDatePicker" DateSelected="IssueDatePicker_DateSelected" IsVisible="False"/>
+            <DatePicker x:Name="DoBPicker" DateSelected="DoBPicker_DateSelected" IsVisible="False"/>
+
+            <Entry Placeholder="Card Number" ReturnType="Next" Keyboard="Numeric"/>
+            <Entry x:Name="IssueDateEnty" Placeholder="Issue Date" ReturnType="Next" Focused="IssueDateEnty_Focused"/>
+            <Entry x:Name="DoBEntry" Placeholder="Date of Birth" ReturnType="Next" Focused="DoBEntry_Focused"/>
+            <Picker Title="Gender" BackgroundColor="Transparent">
+                <Picker.Items>
+                    <x:String>Male</x:String>
+                    <x:String>Female</x:String>
+                </Picker.Items>
+            </Picker>
+                <Button Text="Next" Style="{StaticResource ButtonStyle}" Command="{Binding LoginCommand}" Margin="0,15,0,0"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
