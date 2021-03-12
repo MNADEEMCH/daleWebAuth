@@ -18,6 +18,30 @@
                 <Setter Property="FontAttributes" Value="Bold"/>
                 <Setter Property="HeightRequest" Value="50"/>
             </Style>
+
+            <OnPlatform x:Key="FontAwesomeLightFonts"
+                        x:TypeArguments="x:String">
+                <On Platform="Android" Value="Font Awesome 5 Pro-Light-300.otf#Font Awesome 5 Pro-Light-300" />
+                <On Platform="iOS" Value="FontAwesome5Pro-Light" />
+            </OnPlatform>
+
+            <OnPlatform x:Key="FontAwesomeSolidFonts"
+                        x:TypeArguments="x:String">
+                <On Platform="Android" Value="Font Awesome 5 Pro-Solid-900.otf#Font Awesome 5 Pro-Solid-900" />
+                <On Platform="iOS" Value="FontAwesome5Pro-Solid" />
+            </OnPlatform>
+
+            <OnPlatform x:Key="FontAwesomeRegularFonts"
+                        x:TypeArguments="x:String">
+                <On Platform="Android" Value="Font Awesome 5 Pro-Regular-400.otf#Font Awesome 5 Pro-Regular-400" />
+                <On Platform="iOS" Value="FontAwesome5Pro-Regular" />
+            </OnPlatform>
+
+            <OnPlatform x:Key="FontAwesomeDuotoneFonts" x:TypeArguments="x:String">
+                <On Platform="Android" Value="Font Awesome-Duotone-900.ttf#Font Awesome 5 Pro-Duotone-900" />
+                <On Platform="iOS" Value="FontAwesome5Duotone-Solid"/>
+            </OnPlatform>
+            
         </ResourceDictionary>
     </Application.Resources>
 </Application>
