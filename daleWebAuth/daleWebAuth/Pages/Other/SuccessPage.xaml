@@ -5,9 +5,14 @@
              Title="Success" Visual="Material">
     <ContentPage.Content>
         <StackLayout Padding="20">
-            <Label Text="Login Success!" TextColor="Green" FontSize="20" FontAttributes="Bold"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <Image Source="green_check_mark.png"></Image>
+            <Label Text="Congraulations" HorizontalOptions="CenterAndExpand" FontSize="Title" FontAttributes="Bold"></Label>
+            <Label Text="You are connected to dale!" 
+                   FontSize="Body"
+                   HorizontalOptions="CenterAndExpand" 
+                   HorizontalTextAlignment="Center"/>
+            <Button Text="Done" Style="{StaticResource ButtonStyle}"
+                    VerticalOptions="CenterAndExpand"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
