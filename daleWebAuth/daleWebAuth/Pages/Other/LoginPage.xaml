@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="daleWebAuth.Pages.Other.LoginPage"
+             xmlns:base="clr-namespace:daleWebAuth.ViewModels.Base;assembly=daleWebAuth" 
+             xmlns:local="clr-namespace:daleWebAuth.ViewModels.Other"
+             x:DataType="local:LoginViewModel"
+             base:ViewModelLocator.AutoWireViewModel="True"
+             Title="Login" Visual="Material">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Entry">
+                <Setter Property="BackgroundColor" Value="Transparent"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout Padding="20">
+            <Entry Placeholder="Identity No." ReturnType="Next"/>
+            <Entry Placeholder="Issurance Date" ReturnType="Next"/>
+            <DatePicker BackgroundColor="Transparent"/>
+            <Entry Placeholder="Gender" ReturnType="Done"/>
+
+            <Button Text="Login" Style="{StaticResource ButtonStyle}" Command="{Binding LoginCommand}" Margin="0,15,0,0"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,4 +1,6 @@
 ﻿using daleWebAuth.Services;
+using daleWebAuth.Services.Navigation;
+using daleWebAuth.ViewModels.Other;
 using System;
 using System.Globalization;
 using System.Reflection;
@@ -19,10 +21,12 @@ namespace daleWebAuth.ViewModels.Base
         {
             _container = new TinyIoCContainer();
             _container.Register<MainViewModel>();
+            _container.Register<LoginViewModel>();
+            _container.Register<OTPViewModel>();
+            _container.Register<VerifyAnswersViewModel>();
             _container.Register<IAccountService, AccountService>();
+            _container.Register<INavigationService, NavigationService>();
             // View models - by default, TinyIoC will register concrete classes as multi-instance.
-
-            
         }
 
 

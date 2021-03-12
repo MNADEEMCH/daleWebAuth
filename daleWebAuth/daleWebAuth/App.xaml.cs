@@ -1,4 +1,5 @@
 ﻿using daleWebAuth.Pages;
+using daleWebAuth.Pages.Other;
 using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
