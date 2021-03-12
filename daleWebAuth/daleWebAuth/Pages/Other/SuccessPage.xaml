@@ -3,10 +3,15 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="daleWebAuth.Pages.Other.SuccessPage">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Login Success!" TextColor="CadetBlue" FontSize="20" FontAttributes="Bold"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout Padding="20">
+            <Image Source="green_check_mark.png"></Image>
+            <Label Text="Congraulations" HorizontalOptions="CenterAndExpand" FontSize="Title" FontAttributes="Bold"></Label>
+            <Label Text="You are connected to dale!" 
+                   FontSize="Body"
+                   HorizontalOptions="CenterAndExpand" 
+                   HorizontalTextAlignment="Center"/>
+            <Button Text="Done" Style="{StaticResource ButtonStyle}"
+                    VerticalOptions="CenterAndExpand"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

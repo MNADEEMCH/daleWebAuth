@@ -15,6 +15,7 @@ namespace daleWebAuth.Pages.Other
         public SuccessPage()
         {
             InitializeComponent();
+            NavigationPage.SetHasNavigationBar(this, false);
         }
     }
 }
