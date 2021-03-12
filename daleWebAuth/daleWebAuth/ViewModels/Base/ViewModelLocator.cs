@@ -1,4 +1,5 @@
-﻿using daleWebAuth.Services;
+﻿using Acr.UserDialogs;
+using daleWebAuth.Services;
 using daleWebAuth.Services.Navigation;
 using daleWebAuth.ViewModels.Other;
 using System;
@@ -26,6 +27,7 @@ namespace daleWebAuth.ViewModels.Base
             _container.Register<VerifyAnswersViewModel>();
             _container.Register<IAccountService, AccountService>();
             _container.Register<INavigationService, NavigationService>();
+            _container.Register(UserDialogs.Instance);
             // View models - by default, TinyIoC will register concrete classes as multi-instance.
         }
 

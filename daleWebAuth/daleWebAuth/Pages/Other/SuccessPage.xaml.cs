@@ -17,5 +17,10 @@ namespace daleWebAuth.Pages.Other
             InitializeComponent();
             NavigationPage.SetHasNavigationBar(this, false);
         }
+
+        private async void Button_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PopToRootAsync();
+        }
     }
 }

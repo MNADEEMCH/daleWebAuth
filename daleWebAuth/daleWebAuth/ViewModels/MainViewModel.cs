@@ -41,14 +41,17 @@ namespace daleWebAuth.ViewModels
 
                 if (!string.IsNullOrEmpty(code))
                 {
-                    var loginResult = await _accountService.ExchangeCodeForToken(code);
-                    if(loginResult.Item1 == helpers.Common.CallStatus.Success)
+                    using (var loading = DialogService.Loading("Authenticating... please wait"))
                     {
-                        await NavigationService.PushAsync(new SuccessPage());
-                    }
-                    else
-                    {
-                        await DialogService.AlertAsync("Authentication is not successful, something went wrong", "Error", "Ok");
+                        var loginResult = await _accountService.ExchangeCodeForToken(code);
+                        if (loginResult.Item1 == helpers.Common.CallStatus.Success)
+                        {
+                            await NavigationService.PushAsync(new SuccessPage());
+                        }
+                        else
+                        {
+                            await DialogService.AlertAsync("Authentication is not successful, something went wrong", "Error", "Ok");
+                        }
                     }
                 }
             }

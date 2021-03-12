@@ -12,7 +12,7 @@
             <Entry Placeholder="Enter debit card last 4 digits" Keyboard="Numeric" MaxLength="4" ReturnType="Next" BackgroundColor="Transparent"/>
             <Entry Placeholder="Mother name" ReturnType="Next" Keyboard="Text" BackgroundColor="Transparent"/>
             <Entry Placeholder="Birth city name" ReturnType="Next" Keyboard="Text" BackgroundColor="Transparent"/>
-            <Button Text="Done" Style="{StaticResource ButtonStyle}" Margin="0,15,0,0" Command="{Binding DoneCommand}"/>
+            <Button Text="Finish" Style="{StaticResource ButtonStyle}" Margin="0,15,0,0" Command="{Binding DoneCommand}"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

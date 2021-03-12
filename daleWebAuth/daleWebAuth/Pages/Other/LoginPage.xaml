@@ -21,7 +21,7 @@
             <DatePicker BackgroundColor="Transparent"/>
             <Entry Placeholder="Gender" ReturnType="Done" Keyboard="Text"/>
 
-            <Button Text="Login" Style="{StaticResource ButtonStyle}" Command="{Binding LoginCommand}" Margin="0,15,0,0"/>
+            <Button Text="Next" Style="{StaticResource ButtonStyle}" Command="{Binding LoginCommand}" Margin="0,15,0,0"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

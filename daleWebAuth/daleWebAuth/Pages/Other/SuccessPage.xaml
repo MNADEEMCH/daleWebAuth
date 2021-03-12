@@ -2,17 +2,27 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="daleWebAuth.Pages.Other.SuccessPage"
+             xmlns:helpers="clr-namespace:daleWebAuth.helpers"
              Title="Success" Visual="Material">
     <ContentPage.Content>
-        <StackLayout Padding="20">
-            <Image Source="green_check_mark.png"></Image>
-            <Label Text="Congraulations" HorizontalOptions="CenterAndExpand" FontSize="Title" FontAttributes="Bold"></Label>
+        <StackLayout Padding="20" VerticalOptions="CenterAndExpand">
+            <Label Text="{Static helpers:FontAwesome.CheckCircle}"
+                   VerticalOptions="CenterAndExpand"
+                   FontSize="150" TextColor="Green"
+                   FontFamily="{StaticResource FontAwesomeSolidFonts}"
+                   HorizontalOptions="CenterAndExpand"/>
+            <Label Text="Congraulations"
+                   Margin="0,50,0,0"
+                   HorizontalOptions="CenterAndExpand" 
+                   FontSize="Title" 
+                   FontAttributes="Bold"/>
             <Label Text="You are connected to dale!" 
                    FontSize="Body"
                    HorizontalOptions="CenterAndExpand" 
                    HorizontalTextAlignment="Center"/>
-            <Button Text="Done" Style="{StaticResource ButtonStyle}"
-                    VerticalOptions="CenterAndExpand"/>
+            <Button Text="Done" Style="{StaticResource ButtonStyle}" 
+                    Margin="0,30,0,0"
+                    Clicked="Button_Clicked"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
