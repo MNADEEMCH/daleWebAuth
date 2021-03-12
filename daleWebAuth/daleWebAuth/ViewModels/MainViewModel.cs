@@ -35,7 +35,7 @@ namespace daleWebAuth.ViewModels
 
             try
             {
-                var codeResult = await WebAuthenticator.AuthenticateAsync(new Uri(externalUrl), new Uri("daleWebAuth://"));
+                var codeResult = await WebAuthenticator.AuthenticateAsync(new Uri(externalUrl), new Uri(GlobalSettings.Instance.Callback));
                 var code = codeResult.Properties["code"];
 
                 if (!string.IsNullOrEmpty(code))

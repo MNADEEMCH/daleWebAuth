@@ -15,20 +15,20 @@ namespace daleWebAuth.Services
     public class AccountService : IAccountService
     {
         private string _codeVerifier;
+
         public string CreateAuthorizationRequest()
         {
             // Create URI to authorization endpoint
-            var authorizeRequest = new AuthorizeRequest("https://auth-dev.mdapps-staging.com/connect/authorize");
+            var authorizeRequest = new AuthorizeRequest(GlobalSettings.Instance.AuthorizeEndpoint);
 
             // Dictionary with values for the authorize request
             var dic = new Dictionary<string, string>
             {
                 { "response_type", "code" },
-                { "client_id", "XamainAuthDemoApp" },
-                { "client_secret", "secret" },
-                { "redirect_uri", "daleWebAuth://" },
-                { "scope", "openid email profile apiApp" },
-                //{ "grant_type", "authorization_code"},
+                { "client_id", GlobalSettings.Instance.ClientId },
+                { "client_secret", GlobalSettings.Instance.ClientSecret },
+                { "redirect_uri", GlobalSettings.Instance.Callback },
+                { "scope", "openid email profile offline_access apiApp" },
                 { "nonce", Guid.NewGuid().ToString("N") },
                 { "code_challenge", CreateCodeChallenge() },
                 { "code_challenge_method", "S256" }
@@ -37,8 +37,6 @@ namespace daleWebAuth.Services
             // Add CSRF token to protect against cross-site request forgery attacks.
             var currentCSRFToken = Guid.NewGuid().ToString("N");
             dic.Add("state", currentCSRFToken);
-
-            //dic.Add("acr_values", "idp:Google");
 
             var authorizeUri = authorizeRequest.Create(dic);
             return authorizeUri;
@@ -54,21 +52,21 @@ namespace daleWebAuth.Services
             return Base64Url.Encode(challengeBytes);
         }
 
-        public async Task<Tuple<Common.CallStatus, TokenResponse>> ExchangeCodeForToken(string code)
+        public async Task<Tuple<CallStatus, TokenResponse>> ExchangeCodeForToken(string code)
         {
             var client = new HttpClient();
             var response = await client.RequestAuthorizationCodeTokenAsync(new AuthorizationCodeTokenRequest
             {
-                Address = "https://auth-dev.mdapps-staging.com/",
+                Address = GlobalSettings.Instance.TokenEndpoint,
 
-                ClientId = "XamainAuthDemoApp",
-                ClientSecret = "secret",
+                ClientId = GlobalSettings.Instance.ClientId,
+                ClientSecret = GlobalSettings.Instance.ClientSecret,
 
                 Code = code,
-                RedirectUri = "https://www.lifemiles.com/",
+                RedirectUri = GlobalSettings.Instance.Callback,
 
                 // optional PKCE parameter
-                CodeVerifier = "jkd783yhu"
+                CodeVerifier = _codeVerifier
             });
 
             if (!response.IsError)

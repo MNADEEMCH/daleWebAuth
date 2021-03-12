@@ -16,7 +16,6 @@
     <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
     <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
     <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
-    <AndroidUseLatestPlatformSdk>false</AndroidUseLatestPlatformSdk>
     <TargetFrameworkVersion>v9.0</TargetFrameworkVersion>
     <AndroidEnableSGenConcurrent>true</AndroidEnableSGenConcurrent>
     <AndroidUseAapt2>true</AndroidUseAapt2>
@@ -99,7 +98,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\daleWebAuth\daleWebAuth.csproj">
-      <Project>{659E0A41-3CB4-4BCE-9AAB-E0C6ABDF7CAE}</Project>
+      <Project>{1CE24C8A-9ED8-44A6-9B7B-D66C0F8C289E}</Project>
       <Name>daleWebAuth</Name>
     </ProjectReference>
   </ItemGroup>
