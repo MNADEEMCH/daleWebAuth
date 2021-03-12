@@ -9,9 +9,8 @@
              Title="OTP Verification" Visual="Material">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <Entry Placeholder="Enter OTP" BackgroundColor="Transparent" Keyboard="Numeric" MaxLength="10"/>
+            <Button Text="Verify" Style="{StaticResource ButtonStyle}" Command="{Binding VerifyCommand}"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
